@@ -25,6 +25,12 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        firstTextField.text = ""
+        secondTextField.text = ""
+    }
+    
     @IBAction func addButtonTapped(_ sender: Any) {
         presentSecondViewController(type: .add)
     }
@@ -48,22 +54,23 @@ class ViewController: UIViewController {
             return
         }
         secondViewController.result = calculate(type: type)
+        secondViewController.modalPresentationStyle = .fullScreen
         self.present(secondViewController, animated: true, completion: nil)
     }
     
     func calculate(type: Calculation) -> String {
         guard let firstText = firstTextField.text else {
-            return ""
+            return "잘못된 입력이에요!"
         }
         guard let secondText = secondTextField.text else {
-            return ""
+            return "잘못된 입력이에요!"
         }
         
         guard let firstNumber = Double(firstText) else {
-            return ""
+            return "잘못된 입력이에요!"
         }
         guard let secondNumber = Double(secondText) else {
-            return ""
+            return "잘못된 입력이에요!"
         }
         
         var result: Double = 0
