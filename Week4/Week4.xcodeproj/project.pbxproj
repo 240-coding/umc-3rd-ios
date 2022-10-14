@@ -13,6 +13,7 @@
 		893104DE28F9D93D00342FD5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 893104DC28F9D93D00342FD5 /* Main.storyboard */; };
 		893104E028F9D94000342FD5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 893104DF28F9D94000342FD5 /* Assets.xcassets */; };
 		893104E328F9D94000342FD5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 893104E128F9D94000342FD5 /* LaunchScreen.storyboard */; };
+		893104EB28F9DC0900342FD5 /* MemoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 893104EA28F9DC0900342FD5 /* MemoTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		893104DF28F9D94000342FD5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		893104E228F9D94000342FD5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		893104E428F9D94000342FD5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		893104EA28F9DC0900342FD5 /* MemoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 				893104D628F9D93D00342FD5 /* AppDelegate.swift */,
 				893104D828F9D93D00342FD5 /* SceneDelegate.swift */,
 				893104DA28F9D93D00342FD5 /* ViewController.swift */,
+				893104EA28F9DC0900342FD5 /* MemoTableViewCell.swift */,
 				893104DC28F9D93D00342FD5 /* Main.storyboard */,
 				893104DF28F9D94000342FD5 /* Assets.xcassets */,
 				893104E128F9D94000342FD5 /* LaunchScreen.storyboard */,
@@ -141,6 +144,7 @@
 				893104DB28F9D93D00342FD5 /* ViewController.swift in Sources */,
 				893104D728F9D93D00342FD5 /* AppDelegate.swift in Sources */,
 				893104D928F9D93D00342FD5 /* SceneDelegate.swift in Sources */,
+				893104EB28F9DC0900342FD5 /* MemoTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
