@@ -24,5 +24,11 @@ class MemoTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        let config = UIImage.SymbolConfiguration(scale: .large)
+        heartButton.setImage(UIImage(systemName: "heart")?.withConfiguration(config), for: .normal)
+    }
 
 }
