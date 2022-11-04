@@ -15,7 +15,7 @@ struct MemoDataModel {
 
 class ViewController: UIViewController {
     
-    let memoData: [MemoDataModel] = [
+    var memoData: [MemoDataModel] = [
         MemoDataModel(title: "메모입니다", date: "2022/10/15", content: "안녕하세요~~"),
         MemoDataModel(title: "오늘 할 일", date: "2022/10/12", content: "UMC 세미나 듣기, iOS 공부하기, 시험 공부"),
         MemoDataModel(title: "아이유 - 마음", date: "2022/09/17", content: "나를 알아주지 않으셔도 돼요 찾아오지 않으셔도 다만 꺼지지 않는 작은 불빛이 여기 반짝 살아있어요 영영 살아있어요"),
@@ -89,5 +89,31 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 60
+    }
+    
+    func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let action = UIContextualAction(style: .normal, title: "위로🆙", handler: {
+            action, view, completionHandler in
+            self.memoData.insert(self.memoData[indexPath.row], at: 0)
+            self.memoData.remove(at: indexPath.row+1)
+            tableView.moveRow(at: indexPath, to: IndexPath(row: 0, section: 0))
+            completionHandler(true)
+        })
+        
+        action.backgroundColor = .systemGreen
+        
+        return UISwipeActionsConfiguration(actions: [action])
+    }
+    
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let action = UIContextualAction(style: .normal, title: "지워요?🥺", handler: { action , view, completionHandler in
+            self.memoData.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .automatic)
+            completionHandler(true)
+        })
+        
+        action.backgroundColor = .red
+        
+        return UISwipeActionsConfiguration(actions: [action])
     }
 }
