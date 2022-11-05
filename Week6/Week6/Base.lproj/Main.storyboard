@@ -82,6 +82,9 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="191" height="50"/>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain" title="시작"/>
+                                                        <connections>
+                                                            <action selector="pressSecondStartButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="D69-WS-f7z"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dsa-Wj-F5r">
                                                         <rect key="frame" x="191" y="0.0" width="191" height="50"/>
@@ -89,6 +92,9 @@
                                                         <buttonConfiguration key="configuration" style="plain" title="종료">
                                                             <color key="baseForegroundColor" systemColor="systemRedColor"/>
                                                         </buttonConfiguration>
+                                                        <connections>
+                                                            <action selector="pressSecondStopButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="q8f-5c-Air"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <constraints>
