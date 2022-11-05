@@ -16,55 +16,108 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="countDownTimer" minuteInterval="1" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s11-K3-HDm">
-                                <rect key="frame" x="0.0" y="194" width="414" height="216"/>
-                            </datePicker>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="알람을 울릴 시간을 선택해주세요⏰" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ElH-59-BNO">
-                                <rect key="frame" x="86" y="442" width="242" height="20.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1WI-io-QEm">
-                                <rect key="frame" x="16" y="711" width="382" height="31"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="10Q-I9-B7v">
+                                <rect key="frame" x="16" y="60" width="382" height="786"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4t6-C6-KuI">
-                                        <rect key="frame" x="0.0" y="0.0" width="191" height="31"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="시작"/>
-                                        <connections>
-                                            <action selector="pressStartButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="GF4-kM-XvE"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lMt-Mq-JPK">
-                                        <rect key="frame" x="191" y="0.0" width="191" height="31"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="종료">
-                                            <color key="baseForegroundColor" systemColor="systemRedColor"/>
-                                        </buttonConfiguration>
-                                        <connections>
-                                            <action selector="pressStopButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dNM-Ii-8yW"/>
-                                        </connections>
-                                    </button>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="0kH-IF-eyz">
+                                        <rect key="frame" x="0.0" y="0.0" width="382" height="393"/>
+                                        <subviews>
+                                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="countDownTimer" minuteInterval="1" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s11-K3-HDm">
+                                                <rect key="frame" x="31" y="0.0" width="320" height="290.5"/>
+                                            </datePicker>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="알람을 울릴 시간을 선택해주세요⏰" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ElH-59-BNO">
+                                                <rect key="frame" x="70" y="306.5" width="242" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1WI-io-QEm">
+                                                <rect key="frame" x="0.0" y="343" width="382" height="50"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4t6-C6-KuI">
+                                                        <rect key="frame" x="0.0" y="0.0" width="191" height="50"/>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="plain" title="시작"/>
+                                                        <connections>
+                                                            <action selector="pressFirstStartButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Qpt-01-9dK"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lMt-Mq-JPK">
+                                                        <rect key="frame" x="191" y="0.0" width="191" height="50"/>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="plain" title="종료">
+                                                            <color key="baseForegroundColor" systemColor="systemRedColor"/>
+                                                        </buttonConfiguration>
+                                                        <connections>
+                                                            <action selector="pressFirstStopButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VTf-B5-lwV"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="OcZ-NB-POE"/>
+                                                </constraints>
+                                            </stackView>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="1WI-io-QEm" secondAttribute="trailing" id="G4E-Tj-uvP"/>
+                                            <constraint firstItem="1WI-io-QEm" firstAttribute="leading" secondItem="0kH-IF-eyz" secondAttribute="leading" id="ZXa-o6-rEQ"/>
+                                        </constraints>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="jKC-1F-E5y">
+                                        <rect key="frame" x="0.0" y="393" width="382" height="393"/>
+                                        <subviews>
+                                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="countDownTimer" minuteInterval="1" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qtM-rT-ksr">
+                                                <rect key="frame" x="31" y="0.0" width="320" height="290.5"/>
+                                            </datePicker>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="알람을 울릴 시간을 선택해주세요⏰" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H0w-Vn-coZ">
+                                                <rect key="frame" x="70" y="306.5" width="242" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KDN-kO-qhz">
+                                                <rect key="frame" x="0.0" y="343" width="382" height="50"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vPR-dH-Kgo">
+                                                        <rect key="frame" x="0.0" y="0.0" width="191" height="50"/>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="plain" title="시작"/>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dsa-Wj-F5r">
+                                                        <rect key="frame" x="191" y="0.0" width="191" height="50"/>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="plain" title="종료">
+                                                            <color key="baseForegroundColor" systemColor="systemRedColor"/>
+                                                        </buttonConfiguration>
+                                                    </button>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="NOl-be-xla"/>
+                                                </constraints>
+                                            </stackView>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="KDN-kO-qhz" secondAttribute="trailing" id="YcP-Ve-0UH"/>
+                                            <constraint firstItem="KDN-kO-qhz" firstAttribute="leading" secondItem="jKC-1F-E5y" secondAttribute="leading" id="iI3-Uv-tYl"/>
+                                        </constraints>
+                                    </stackView>
                                 </subviews>
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="1WI-io-QEm" secondAttribute="trailing" constant="16" id="IJv-yY-nCT"/>
-                            <constraint firstItem="s11-K3-HDm" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="TAQ-hP-js1"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="1WI-io-QEm" secondAttribute="bottom" constant="120" id="WcH-ix-Jz5"/>
-                            <constraint firstItem="s11-K3-HDm" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="ZEC-rr-RHy"/>
-                            <constraint firstItem="ElH-59-BNO" firstAttribute="top" secondItem="s11-K3-HDm" secondAttribute="bottom" constant="32" id="ao2-Il-lkn"/>
-                            <constraint firstItem="s11-K3-HDm" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="150" id="bIn-LE-cet"/>
-                            <constraint firstItem="ElH-59-BNO" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="hzg-fk-PB9"/>
-                            <constraint firstItem="1WI-io-QEm" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="y6O-lh-54U"/>
+                            <constraint firstItem="10Q-I9-B7v" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="Fsv-D0-MlS"/>
+                            <constraint firstItem="10Q-I9-B7v" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="16" id="Pu7-0A-dP3"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="10Q-I9-B7v" secondAttribute="trailing" constant="16" id="nxV-UV-fzX"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="10Q-I9-B7v" secondAttribute="bottom" constant="16" id="qAX-TQ-8G3"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="datePicker" destination="s11-K3-HDm" id="20s-er-Cje"/>
-                        <outlet property="label" destination="ElH-59-BNO" id="XgB-S2-n1g"/>
+                        <outlet property="firstDatePicker" destination="s11-K3-HDm" id="20s-er-Cje"/>
+                        <outlet property="firstLabel" destination="ElH-59-BNO" id="XgB-S2-n1g"/>
+                        <outlet property="secondDatePicker" destination="qtM-rT-ksr" id="QM7-VL-1Ph"/>
+                        <outlet property="secondLabel" destination="H0w-Vn-coZ" id="bIc-dL-ecE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
