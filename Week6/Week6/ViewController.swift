@@ -8,6 +8,7 @@
 import UIKit
 
 class ViewController: UIViewController {
+    // MARK: - Properties
     @IBOutlet var firstDatePicker: UIDatePicker!
     @IBOutlet var firstLabel: UILabel!
     
@@ -20,11 +21,29 @@ class ViewController: UIViewController {
     var isFirstRunning = true
     var isSecondRunning = true
     
+    // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        if let firstDate = UserDefaults.standard.object(forKey: "FirstDate") as? Date {
+            firstDatePicker.date = firstDate
+        }
+        if let secondDate = UserDefaults.standard.object(forKey: "SecondDate") as? Date {
+            secondDatePicker.date = secondDate
+        }
+        firstDatePicker.addTarget(self, action: #selector(didDatePickerValueChanged(_:)), for: .valueChanged)
+        secondDatePicker.addTarget(self, action: #selector(didDatePickerValueChanged(_:)), for: .valueChanged)
     }
 
+    // MARK: - Actions
+    @objc func didDatePickerValueChanged(_ sender: UIDatePicker) {
+        if sender == firstDatePicker {
+            UserDefaults.standard.set(sender.date, forKey: "FirstDate")
+        } else {
+            UserDefaults.standard.set(sender.date, forKey: "SecondDate")
+        }
+    }
+    
     @IBAction func pressFirstStartButton(_ sender: Any) {
         var countDownTime = Int(firstDatePicker.countDownDuration)
         isFirstRunning = true
