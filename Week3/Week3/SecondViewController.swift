@@ -11,6 +11,7 @@ class SecondViewController: UIViewController {
     
     var result: String?
     
+    @IBOutlet var imageView: UIImageView!
     @IBOutlet var resultLabel: UILabel!
     
     
@@ -20,6 +21,20 @@ class SecondViewController: UIViewController {
 
         if let result = result {
             resultLabel.text = result
+        }
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        animateImageView()
+
+    }
+    
+    func animateImageView() {
+        UIView.animate(withDuration: 2, delay: 0, usingSpringWithDamping: 0.4, initialSpringVelocity: 0.3, options: .repeat) {
+            let translation = CGAffineTransform(translationX: 0, y: 10)
+            self.imageView.transform = translation
+            self.imageView.layoutIfNeeded()
         }
     }
     

@@ -195,6 +195,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="imageView" destination="I9H-5h-U59" id="zgt-QH-uK4"/>
                         <outlet property="resultLabel" destination="7ba-hb-0MU" id="tuJ-nS-Wfd"/>
                     </connections>
                 </viewController>
