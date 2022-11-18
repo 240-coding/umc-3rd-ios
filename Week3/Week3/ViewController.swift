@@ -16,6 +16,7 @@ enum Calculation: String {
 
 class ViewController: UIViewController {
     
+    @IBOutlet var imageView: UIImageView!
     @IBOutlet var firstTextField: UITextField!
     @IBOutlet var secondTextField: UITextField!
     
@@ -23,12 +24,26 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(didTapImageView))
+        imageView.addGestureRecognizer(tapGestureRecognizer)
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         firstTextField.text = ""
         secondTextField.text = ""
+    }
+    
+    @objc func didTapImageView() {
+        UIView.animate(withDuration: 0.25) {
+            let scale = CGAffineTransform(scaleX: 0.9, y: 0.9)
+            self.imageView.transform = scale
+        } completion: { finished in
+            UIView.animate(withDuration: 0.25) {
+                self.imageView.transform = .identity
+            }
+        }
+
     }
     
     @IBAction func addButtonTapped(_ sender: Any) {
