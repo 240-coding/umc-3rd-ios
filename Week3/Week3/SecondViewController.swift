@@ -34,7 +34,7 @@ class SecondViewController: UIViewController {
         UIView.animate(withDuration: 2, delay: 0, usingSpringWithDamping: 0.4, initialSpringVelocity: 0.3, options: .repeat) {
             let translation = CGAffineTransform(translationX: 0, y: 10)
             self.imageView.transform = translation
-            self.imageView.layoutIfNeeded()
+//            self.imageView.layoutIfNeeded()
         }
     }
     
